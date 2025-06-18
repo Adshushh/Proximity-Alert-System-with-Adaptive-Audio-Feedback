@@ -8,7 +8,8 @@ const int buzzerPin = 7;
 // Initialize LCD: RS, E, D4, D5, D6, D7
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
-void setup() {
+void setup() 
+{
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   pinMode(buzzerPin, OUTPUT);
@@ -34,16 +35,21 @@ void loop()
   // Display on LCD
   lcd.setCursor(0, 1);
   lcd.print(distance);
-  lcd.print(" cm     "); // Clear extra chars
+  lcd.print(" cm     "); 
+  // Clear extra chars
 
   // Buzzer control based on distance
-  if (distance <= 100) {
-    int beepDelay = map(distance, 0, 100, 50, 1000); // Faster beeps as object gets closer
+  if (distance <= 100)
+  {
+    int beepDelay = map(distance, 0, 100, 50, 1000); 
+    // Faster beeps as object gets closer
     digitalWrite(buzzerPin, HIGH);
     delay(50);
     digitalWrite(buzzerPin, LOW);
     delay(beepDelay);
-  } else {
+  } 
+  else 
+  {
     digitalWrite(buzzerPin, LOW);
   }
 
