@@ -1,0 +1,7 @@
+All the linux commands you might need :
+
+1) For upgrading packages : sudo apt update && sudo apt upgrade -y
+2) Installing arduino IDE : sudo apt install arduino -y
+3) Grant USB Serial Access to Arduino (e.g., /dev/ttyACM0) - You have to add the user to your dialout group : sudo usermod -aG dialout $USER
+4) Now verify ( look out for ttyUSB0 / ttyASM0 ) : ls /dev/tty*
+5) NOw start the arduino IDE and get on with the code : arduino 
